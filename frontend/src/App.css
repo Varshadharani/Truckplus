@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff;
+  scroll-behavior: smooth;
+}
+
+/* Parallax Landing Style */
+.parallax-landing {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.parallax-landing .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 800px;
+}
+
+.parallax-landing h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.parallax-landing p {
+  font-size: 1.2rem;
+}
+
+.cta-btn {
+  padding: 12px 30px;
+  background-color: #f97316;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.services, .why-choose {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.services h2, .why-choose h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.services-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.services-list div {
+  max-width: 300px;
+}
+
+.why-choose ul {
+  list-style: none;
+  padding: 0;
+}
+
+.why-choose li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
