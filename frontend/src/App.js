@@ -4,8 +4,14 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import ServicesPage from "./pages/ServicesPage";
+import AboutPage from './pages/AboutPage';
+import TrackingPage from './pages/TrackingPage';
+import ContactPage from './pages/ContactPage';
 import { Routes, Route } from 'react-router-dom';
 import { Parallax } from 'react-parallax';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 function App() {
   return (
@@ -62,6 +68,12 @@ function App() {
         {/* Home Page */}
         <Route path="/home" element={<HomePage />} />
         <Route path="/services" element={<ServicesPage />} />
+        <Route path="/about" element={<AboutPage />} />
+       
+        <Route path="/tracking" element={<TrackingPage/>} />
+        <Route path="/contact" element={<ContactPage />} />
+
+
       </Routes>
 
       <Footer />

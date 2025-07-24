@@ -12,9 +12,11 @@ const Navbar = () => {
         <Link to="/">Landing</Link> {/* ✅ Landing Page */}
         <Link to="/home">Home</Link> {/* ✅ Home Page */}
         <Link to="/services" className="nav-link">Services</Link>
-        <a href="#">About Us</a>
-        <a href="#">Fleet</a>
-        <a href="#">Contact</a>
+       <Link to="/about" className="nav-link">About Us</Link>
+       <Link to="/tracking" className="nav-link">Consignment Tracking</Link>
+       
+       <Link to="/contact">Contact Us</Link>
+
         <a href="#" className="language">🌐 العربية</a>
       </div>
     </nav>

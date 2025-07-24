@@ -32,6 +32,26 @@ import trust3 from '../assets/trust3.png';
 import trust4 from '../assets/trust4.png';
 import trckfloat from '../assets/truckfloat.jpg';
 import truckVideo  from '../assets/truck-night.mp4';
+// Truck Gallery Assets
+import g1 from '../assets/gallery/truck1.jpg';
+import g2 from '../assets/gallery/truck2.jpg';
+import g3 from '../assets/gallery/truck3.jpg';
+import g4 from '../assets/gallery/truck4.jpg';
+import g5 from '../assets/gallery/truck5.avif';
+import g6 from '../assets/gallery/truck6.jpg';
+import g7 from '../assets/gallery/truck7.jpg';
+import g8 from '../assets/gallery/truck8.jpeg';
+import g9 from '../assets/gallery/truck9.jpeg';
+import g10 from '../assets/gallery/truck10.avif';
+import g11 from '../assets/gallery/truck11.avif';
+import g12 from '../assets/gallery/truck12.jpg';
+import g13 from '../assets/gallery/truck13.jpg';
+import g14 from '../assets/gallery/truck14.jpg';
+import g15 from '../assets/gallery/truck15.jpg';
+
+// Add this array at the top (outside the component function)
+
+import { FaTruck, FaSmile, FaGlobe, FaBoxes } from "react-icons/fa";
 import './HomePage.css'; // Assuming you have a CSS file for styling
 
 const slides = [
@@ -68,6 +88,8 @@ const fleetItems = [
   { icon: truck3, title: '20FT CONTAINER' },
   { icon: truck4, title: '1 TON PICKUP' },
 ];
+
+const galleryImages = [g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15];
 
 const HomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -116,6 +138,68 @@ const handleVideoEnd = () => {
     setShowText(true);
   }, 500); // wait before text appears
 };
+//gallery slider auto-scroll
+useEffect(() => {
+  const slider = window.gallerySlider;
+  let scrollAmount = 0;
+  const speed = 2; // pixels per tick
+  const interval = 20; // ms (lower = faster)
+
+  const autoSlide = setInterval(() => {
+    if (slider) {
+      scrollAmount += speed;
+      if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
+        scrollAmount = 0;
+      }
+      slider.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  }, interval);
+
+  return () => clearInterval(autoSlide);
+}, []);
+
+const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    service: '',
+    commodity: '',
+    delivery: '',
+    weight: '',
+    quantity: '',
+    expressDelivery: false,
+    packaging: false,
+    insurance: false,
+    note: ''
+  });
+
+  const [quoteTotal, setQuoteTotal] = useState(0);
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
+  };
+
+  const calculateQuote = () => {
+    let basePrice = 100; // base quote logic
+    if (formData.expressDelivery) basePrice += 40;
+    if (formData.packaging) basePrice += 15;
+    if (formData.insurance) basePrice += 20;
+    setQuoteTotal(basePrice);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    calculateQuote();
+    // You can console.log(formData) here or send it to an API
+  };
+
+
   
 
  return (
@@ -147,7 +231,7 @@ const handleVideoEnd = () => {
 
    
   <section className="about-section">
-  <h2>About US</h2>
+  {/* <h2>About US</h2> */}
   <h1>Welcome to <strong>TruckPlus</strong></h1>
   <p>
     TruckPlus is a Global logistics company, one that is backed by in-depth knowledge of the field, decades of experience, and dedicated expert employees. 
@@ -166,6 +250,23 @@ const handleVideoEnd = () => {
     The top-class fleet list below helps us accomplish world-class projects, which allows us to offer flexibility to our customers for flawless execution.
   </p>
       </section>
+ <section className="gallery-section">
+  <div className="gallery-title">
+    <h2>Our Gallery</h2>
+    <p>Explore our latest trucks and logistics operations in action.</p>
+  </div>
+
+  <div className="gallery-slider-container" ref={(el) => (window.gallerySlider = el)}>
+    {galleryImages.map((img, index) => (
+      <div key={index} className="gallery-slide">
+        <img src={img} alt={`Truck ${index + 1}`} />
+      </div>
+    ))}
+  </div>
+</section>
+
+
+
   <section className="vision-mission-values">
         <div className="vmv-card">
           <h3>Our Vision</h3>
@@ -510,42 +611,88 @@ const handleVideoEnd = () => {
   </div>
 </section>
 <section className="quote-section">
-  <div className="quote-container">
-    {/* Left: Quote Form */}
-    <div className="quote-form">
-      <h2>Get a Quote</h2>
-      <p>Please fill in the details to receive a tailored quote for your shipping needs.</p>
-      <form className="form-grid">
-        <input type="text" placeholder="Full Name" required />
-        <input type="email" placeholder="Email Address" required />
-        <input type="text" placeholder="Company (Optional)" />
-        <input type="tel" placeholder="Contact Number" required />
+      <div className="quote-container">
+        {/* Left: Quote Form */}
+        <div className="quote-form">
+          <h2>Get a Quote</h2>
+          <p>Please fill in the details to receive a tailored quote for your shipping needs.</p>
+          <form className="form-grid" onSubmit={handleSubmit}>
+  <input type="text" name="name" placeholder="Your name" value={formData.name} onChange={handleChange} required />
+  <input type="email" name="email" placeholder="Your email address" value={formData.email} onChange={handleChange} required />
 
-        <select required>
-          <option value="">Select a Service</option>
-          {[...Array(10)].map((_, i) => (
-            <option key={i} value={`Service ${i + 1}`}>Service {i + 1}</option>
-          ))}
-        </select>
+  <select name="service" value={formData.service} onChange={handleChange} required>
+    <option value="">Select Service</option>
+    {[...Array(10)].map((_, i) => (
+      <option key={i} value={`Service ${i + 1}`}>Service {i + 1}</option>
+    ))}
+  </select>
 
-        <select required>
-          <option value="">Select a Commodity</option>
-          {[...Array(10)].map((_, i) => (
-            <option key={i} value={`Commodity ${i + 1}`}>Commodity {i + 1}</option>
-          ))}
-        </select>
+  <select name="commodity" value={formData.commodity} onChange={handleChange} required>
+    <option value="">Select Commodity</option>
+    {[...Array(10)].map((_, i) => (
+      <option key={i} value={`Commodity ${i + 1}`}>Commodity {i + 1}</option>
+    ))}
+  </select>
 
-        <textarea rows="4" placeholder="Describe your requirements..." required></textarea>
-        <button type="submit" className="quote-submit">Submit Inquiry</button>
-      </form>
-    </div>
+  <select name="delivery" value={formData.delivery} onChange={handleChange}>
+    <option value="">Delivery To</option>
+    {[...Array(10)].map((_, i) => (
+      <option key={i} value={`Delivery ${i + 1}`}>Delivery {i + 1}</option>
+    ))}
+  </select>
 
-    {/* Right: Parallax Floating Truck Image */}
-    <div className="quote-image">
-      <img src={trckfloat} alt="Truck" />
-    </div>
-  </div>
-</section>
+  <select name="quantity" value={formData.quantity} onChange={handleChange}>
+    <option value="">Quantity of Goods</option>
+    {[...Array(100)].map((_, i) => (
+      <option key={i} value={i + 1}>{i + 1}</option>
+    ))}
+  </select>
+<input
+  type="text"
+  name="weight"
+  placeholder="Weight (kg)"
+  value={formData.weight}
+  onChange={handleChange}
+  className="input-weight"
+/>
+
+
+
+  {/* Stylish Checkbox Group */}
+ <div className="checkbox-group">
+  <label>
+    <input type="checkbox" name="expressDelivery" checked={formData.expressDelivery} onChange={handleChange} />
+    Express Delivery (+$40)
+  </label>
+  <label>
+    <input type="checkbox" name="packaging" checked={formData.packaging} onChange={handleChange} />
+    Packaging (+$15)
+  </label>
+  <label>
+    <input type="checkbox" name="insurance" checked={formData.insurance} onChange={handleChange} />
+    Add Insurance (+$20)
+  </label>
+</div>
+
+
+  <textarea name="note" rows="4" placeholder="Message / Note" value={formData.note} onChange={handleChange}></textarea>
+
+  <button type="submit" className="quote-submit">Get a quote</button>
+</form>
+
+          {quoteTotal > 0 && (
+            <div className="quote-result">
+              <h3>Estimated Quote: ${quoteTotal}</h3>
+            </div>
+          )}
+        </div>
+
+        {/* Right: Parallax Floating Truck Image */}
+        <div className="quote-image">
+          <img src={trckfloat} alt="Truck" />
+        </div>
+      </div>
+    </section>
 
 
 
