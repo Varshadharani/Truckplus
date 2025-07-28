@@ -413,6 +413,145 @@
 .contact-details strong {
   color: #1d4d4d;
 }
+/* ---------- Responsive Styling for Tracking Page ---------- */
+
+@media (max-width: 1024px) {
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+
+  .info-section {
+    padding: 60px 5%;
+    gap: 30px;
+  }
+
+  .text-column h2 {
+    font-size: 1.8rem;
+  }
+
+  .feature-heading h2 {
+    font-size: 2rem;
+  }
+
+  .text-block h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tracking-hero {
+    height: 300px;
+  }
+
+  .info-section {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .overlay-box {
+    width: 90%;
+    padding: 15px;
+    transform: translate(-50%, -20%);
+  }
+
+  .feature-heading h2 {
+    font-size: 1.8rem;
+  }
+
+  .feature-card.glass {
+    padding: 20px 16px;
+  }
+
+  .text-block,
+  .image-block {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .delivery-content {
+    flex-direction: column;
+  }
+
+  .text-block h2 {
+    font-size: 1.6rem;
+  }
+
+  .text-block p {
+    font-size: 0.95rem;
+  }
+
+  .highlights li {
+    font-size: 0.95rem;
+  }
+
+  .contact-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .contact-card h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-overlay h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-overlay p {
+    font-size: 0.9rem;
+  }
+
+  .overlay-box h3 {
+    font-size: 1.2rem;
+  }
+
+  .overlay-box p {
+    font-size: 0.85rem;
+  }
+
+  .feature-heading h2 {
+    font-size: 1.6rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9rem;
+  }
+
+  .text-block h2 {
+    font-size: 1.5rem;
+  }
+
+  .text-block p,
+  .highlights li,
+  .contact-form label,
+  .contact-form input,
+  .contact-form textarea,
+  .contact-details {
+    font-size: 0.9rem;
+  }
+
+  .contact-form button {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .contact-details h4 {
+    font-size: 1.2rem;
+  }
+}
 
 
 

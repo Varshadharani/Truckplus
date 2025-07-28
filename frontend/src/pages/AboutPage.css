@@ -1,3 +1,4 @@
+
 .about-hero {
   background-image: url('../assets/aboutbanner.webp');
   background-size: cover;
@@ -588,3 +589,184 @@
 .contact-details strong {
   color: #1d4d4d;
 }
+
+/* Responsive Design for About Us Page */
+
+/* Tablets and below */
+@media (max-width: 1024px) {
+  .about-hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-hero-content p {
+    font-size: 1rem;
+  }
+
+  .about-section,
+  .about-section1 {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .about-image,
+  .about-image1 {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .about-content,
+  .about-text1 {
+    width: 100%;
+    padding: 0;
+  }
+
+  .excellence-section {
+    flex-direction: column;
+  }
+
+  .excellence-image {
+    height: 300px;
+    width: 100%;
+  }
+
+  .excellence-content-wrapper {
+    width: 100%;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .features-excellence {
+    justify-content: center;
+  }
+
+  .testimonial-slider {
+    gap: 15px;
+  }
+
+  .testimonial-card {
+    width: 280px;
+    min-width: 280px;
+  }
+
+  .contact-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .contact-card h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 768px) {
+  .about-hero {
+    height: 50vh;
+  }
+
+  .about-hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .about-heading,
+  .about-text1 h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-description,
+  .about-text1 p {
+    font-size: 0.95rem;
+  }
+
+  .trusted-slider-title {
+    font-size: 1.6rem;
+  }
+
+  .slide img {
+    width: 120px;
+  }
+
+  .testimonial-title {
+    font-size: 1.8rem;
+  }
+
+  .testimonial-card {
+    width: 250px;
+    min-width: 250px;
+    padding: 15px;
+  }
+
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra small devices (phones < 480px) */
+@media (max-width: 480px) {
+  .about-hero {
+    height: 40vh;
+    padding: 20px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .about-hero-content p {
+    font-size: 0.85rem;
+  }
+
+  .about-heading,
+  .about-text1 h2 {
+    font-size: 1.4rem;
+  }
+
+  .about-description,
+  .about-text1 p {
+    font-size: 0.85rem;
+  }
+
+  .features-excellence div {
+    flex: 1 1 100%;
+  }
+
+  .trusted-slider-title {
+    font-size: 1.4rem;
+  }
+
+  .testimonial-title {
+    font-size: 1.5rem;
+  }
+
+  .testimonial-card {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .contact-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .contact-card h2 {
+    font-size: 1.6rem;
+  }
+
+  .contact-details {
+    font-size: 0.9rem;
+  }
+
+  .contact-details h4 {
+    font-size: 1.2rem;
+  }
+}
+

@@ -1,0 +1,94 @@
+.whatsapp-container {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.whatsapp-icon {
+  width: 65px;
+  height: 65px;
+  cursor: pointer;
+  border-radius: 100%;
+  box-shadow: 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-popup {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  background: #fff;
+  z-index: 999999 !important;
+  border-radius: 10px;
+  padding: 15px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.popup-header {
+  background-color: #128C7E;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sub-message {
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 14px;
+}
+.chat-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  z-index: 100000 !important;
+  position: relative;
+  background: white;
+}
+
+.send-btn {
+  align-self: flex-end;
+  background-color: #25D366;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.close-btn {
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+}
+.chat-input {
+  all: unset; /* optional: resets all inherited styles */
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  z-index: 100000 !important;
+  position: relative;
+  background: white;
+  color: black !important;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  border-radius: 6px;
+}

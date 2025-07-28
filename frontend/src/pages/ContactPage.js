@@ -221,11 +221,11 @@ const ContactPage = () => {
     <form className="contact-form">
       <div className="form-group">
         <label>Name *</label>
-        <input type="text" placeholder="Your Name" />
+        <input type="text" placeholder="Your Name" required />
       </div>
       <div className="form-group">
         <label>Email *</label>
-        <input type="email" placeholder="Your Email" />
+        <input type="email" placeholder="Your Email" required />
       </div>
       <div className="form-group">
         <label>Address</label>
@@ -233,7 +233,7 @@ const ContactPage = () => {
       </div>
       <div className="form-group">
         <label>Phone *</label>
-        <input type="tel" placeholder="Your Phone" />
+        <input type="tel" placeholder="Your Phone" required/>
       </div>
       <div className="form-group">
         <label>Subject</label>
@@ -241,7 +241,7 @@ const ContactPage = () => {
       </div>
       <div className="form-group">
         <label>Company Name *</label>
-        <input type="text" placeholder="Company" />
+        <input type="text" placeholder="Company" required/>
       </div>
       <div className="form-group">
         <label>Company Email</label>
@@ -249,11 +249,11 @@ const ContactPage = () => {
       </div>
       <div className="form-group full-width">
         <label>Content *</label>
-        <textarea placeholder="Write your message here" rows="4" />
+        <textarea placeholder="Write your message here" rows="4"  required/>
       </div>
       <div className="form-group checkbox full-width">
         <label>
-          <input type="checkbox" />
+          <input type="checkbox" required />
           I agree to the Terms and Privacy Policy
         </label>
       </div>

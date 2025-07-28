@@ -1,4 +1,6 @@
 import React, { useState,useRef, useEffect } from 'react';
+import { Link } from "react-router-dom";
+
 import aeroplaneImage from '../assets/Aeroplane1.jpg';
 import shipImage from '../assets/ship1.jpg';
 import shipAvifImage from '../assets/ship.avif';
@@ -33,6 +35,7 @@ import trust4 from '../assets/trust4.png';
 import trckfloat from '../assets/truckfloat.jpg';
 import truckVideo  from '../assets/truck-night.mp4';
 // Truck Gallery Assets
+
 import g1 from '../assets/gallery/truck1.jpg';
 import g2 from '../assets/gallery/truck2.jpg';
 import g3 from '../assets/gallery/truck3.jpg';
@@ -373,7 +376,8 @@ const [formData, setFormData] = useState({
         </div>
       </div>
 
-<a href="#contact" className="contact-btn">Contact Us</a>
+<Link to="/contact" className="contact-btn">Contact Us</Link>
+
     </div>
   </div>
 

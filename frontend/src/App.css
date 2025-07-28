@@ -73,3 +73,69 @@ body {
   font-size: 1.1rem;
   margin-bottom: 10px;
 }
+
+/* Responsive Parallax Overlay */
+@media (max-width: 768px) {
+  .parallax-landing .overlay {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .parallax-landing h1 {
+    font-size: 1.8rem;
+  }
+
+  .parallax-landing p {
+    font-size: 1rem;
+  }
+
+  .cta-btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
+/* Responsive Services Section */
+@media (max-width: 768px) {
+  .services-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services-list div {
+    max-width: 90%;
+  }
+}
+
+/* Responsive Why Choose Section */
+@media (max-width: 768px) {
+  .why-choose ul {
+    padding-left: 0;
+  }
+
+  .why-choose li {
+    font-size: 1rem;
+  }
+}
+
+/* General small screen tweaks */
+@media (max-width: 480px) {
+  .parallax-landing h1 {
+    font-size: 1.5rem;
+  }
+
+  .parallax-landing p {
+    font-size: 0.95rem;
+  }
+
+  .cta-btn {
+    font-size: 0.85rem;
+    padding: 8px 18px;
+  }
+
+  .services h2,
+  .why-choose h2 {
+    font-size: 1.5rem;
+  }
+}
+

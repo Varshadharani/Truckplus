@@ -1,25 +1,26 @@
 import './App.css';
 import truckBg from './assets/landingplus.jpeg';
-import Navbar from './components/Navbar';
+ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import ServicesPage from "./pages/ServicesPage";
 import AboutPage from './pages/AboutPage';
 import TrackingPage from './pages/TrackingPage';
 import ContactPage from './pages/ContactPage';
-import { Routes, Route } from 'react-router-dom';
+import WhatsAppChat from "./components/WhatsAppChat";
+
+import { Routes, Route,useNavigate  } from 'react-router-dom';
 import { Parallax } from 'react-parallax';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 function App() {
+   const navigate = useNavigate();
   return (
     <div>
       <Navbar />
 
       <Routes>
-        {/* Landing Page */}
         <Route
           path="/"
           element={
@@ -29,7 +30,7 @@ function App() {
                   <div className="overlay">
                     <h1>Seamless Logistics, Delivered With Precision</h1>
                     <p>Trusted by businesses across Saudi Arabia & GCC region.</p>
-                    <button className="cta-btn">Get a Free Quote</button>
+                    <button className="cta-btn" onClick={() => navigate("/home")}>Explore</button>
                   </div>
                 </div>
               </Parallax>
@@ -64,17 +65,14 @@ function App() {
             </>
           }
         />
-
-        {/* Home Page */}
         <Route path="/home" element={<HomePage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/about" element={<AboutPage />} />
-       
-        <Route path="/tracking" element={<TrackingPage/>} />
+        <Route path="/tracking" element={<TrackingPage />} />
         <Route path="/contact" element={<ContactPage />} />
-
-
       </Routes>
+
+      <WhatsAppChat />
 
       <Footer />
     </div>

@@ -402,12 +402,13 @@ button {
 
 .contact-form input,
 .contact-form textarea {
-  padding: 0.75rem 1rem;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  background-color: #fdfdfd;
-  transition: border-color 0.3s ease;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  backdrop-filter: blur(3px);
+  color: #fff;
+  font-size: 14px;
+  outline: none;
 }
 
 .contact-form input:focus,
@@ -470,3 +471,224 @@ button {
 }
 
 
+/* ---------------- Responsive Styling ---------------- */
+
+@media (max-width: 1024px) {
+  .creative-banner-content h1 {
+    font-size: 2rem;
+  }
+
+  .creative-banner-content p {
+    font-size: 1rem;
+  }
+
+  .desert-form-container {
+    padding: 40px 20px;
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .form-content {
+    max-width: 100%;
+  }
+
+  .branch-card {
+    width: 90%;
+  }
+
+  .branch-header h2 {
+    font-size: 2rem;
+  }
+
+  .branch-header p {
+    font-size: 1rem;
+  }
+
+  .testimonial-title {
+    font-size: 28px;
+  }
+
+  .contact-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .contact-card h2 {
+    font-size: 2rem;
+  }
+
+  .testimonial-card {
+    width: 280px;
+    min-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .creative-banner {
+    height: 300px;
+    padding: 0 20px;
+  }
+
+  .creative-banner-content {
+    padding: 25px 20px;
+  }
+
+  .creative-banner-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .creative-banner-content p {
+    font-size: 0.95rem;
+  }
+
+  .form-overlay {
+    padding: 20px;
+  }
+
+  .form-left h2 {
+    font-size: 32px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .branch-images {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .branch-card {
+    width: 95%;
+  }
+
+  .testimonial-slider {
+    gap: 10px;
+  }
+
+  .testimonial-card {
+    width: 250px;
+    min-width: 250px;
+    padding: 16px;
+  }
+
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form button {
+    width: 100%;
+  }
+
+  .contact-details {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .creative-banner {
+    height: 260px;
+  }
+
+  .creative-banner-content {
+    padding: 16px;
+  }
+
+  .creative-banner-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .creative-banner-content p {
+    font-size: 0.85rem;
+  }
+
+  .form-left h2 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .form-group label,
+  .checkbox-row {
+    font-size: 0.85rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  .branch-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .branch-caption h3 {
+    font-size: 1.1rem;
+  }
+
+  .branch-caption p {
+    font-size: 0.95rem;
+  }
+
+  .testimonial-title {
+    font-size: 24px;
+  }
+
+  .testimonial-card {
+    width: 90%;
+    min-width: auto;
+  }
+
+  .arrow {
+    font-size: 20px;
+    padding: 8px;
+  }
+
+  .contact-card h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-form label,
+  .contact-details p {
+    font-size: 0.85rem;
+  }
+
+  .contact-form button {
+    font-size: 0.95rem;
+    padding: 0.75rem 1.2rem;
+  }
+
+  .contact-details h4 {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 768px) {
+  .servicepages {
+    padding: 10px !important;
+    background-color: #f0f0f0 !important;
+  }
+
+  .service-row {
+    flex-direction: column !important;
+  }
+
+  .service-image {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .service-content {
+    padding: 20px 10px !important;
+    text-align: center !important;
+  }
+
+  .service-content h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .service-content p {
+    font-size: 0.95rem !important;
+  }
+}
