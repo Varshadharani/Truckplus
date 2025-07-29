@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.css';
-import logo from '../assets/trucklogo.png';
+import logo from '../assets/Trucklogo1.png';
 import { Link } from 'react-router-dom'; // ✅ Import Link
 import { Menu, X } from 'lucide-react';
 const Navbar = () => {
@@ -22,8 +22,9 @@ const Navbar = () => {
       <div className={`navbar-right ${menuOpen ? 'open' : ''}`}>
         <Link to="/" onClick={closeMenu}>Landing</Link>
         <Link to="/home" onClick={closeMenu}>Home</Link>
+             <Link to="/about" onClick={closeMenu}>About Us</Link>
         <Link to="/services" onClick={closeMenu}>Services</Link>
-        <Link to="/about" onClick={closeMenu}>About Us</Link>
+        {/* <Link to="/about" onClick={closeMenu}>About Us</Link> */}
         <Link to="/tracking" onClick={closeMenu}>Tracking</Link>
         <Link to="/contact" onClick={closeMenu}>Contact</Link>
         <a href="#" className="language" onClick={closeMenu}>🌐 العربية</a>

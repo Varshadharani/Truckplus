@@ -1,4 +1,5 @@
 import './App.css';
+import TopBar from './components/TopBar'; 
 import truckBg from './assets/landingplus.jpeg';
  import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -18,6 +19,7 @@ function App() {
    const navigate = useNavigate();
   return (
     <div>
+      <TopBar />
       <Navbar />
 
       <Routes>

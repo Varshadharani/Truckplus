@@ -158,6 +158,40 @@ const [formData, setFormData] = useState({
     calculateQuote();
     // You can console.log(formData) here or send it to an API
   };
+const handleServiceContactSubmit = async (e) => {
+  e.preventDefault();
+
+   const form = e.target;
+    const data = {
+      name: form[0].value,
+      email: form[1].value,
+      phone: form[2].value,
+      address: form[3].value,
+      subject: form[4].value,
+      company: form[5].value,
+      companyEmail: form[6].value,
+      message: form[7].value,
+    };
+
+  try {
+      const res = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+      if (result.success) {
+        alert("✅ Thank you! Your message has been sent.");
+        form.reset();
+      } else {
+        alert("⚠️ Something went wrong. Please try again later.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("❌ Failed to send message.");
+    }
+  };
 
 
  
@@ -397,7 +431,7 @@ products within given timeframe, every single time.</p>
         </section>
     
   <section className="contact-section">
-  <div className="contact-card">
+  <div className="contact-card" onSubmit={handleServiceContactSubmit}>
     <h2>Get in Touch</h2>
     <form className="contact-form">
       <div className="form-group">

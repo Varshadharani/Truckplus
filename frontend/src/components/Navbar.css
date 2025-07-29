@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap');
+
 .navbar {
   position: fixed;
-  top: 0;
+   height: 60px;
+  top: 32px;
   left: 0;
   right: 0;
   z-index: 1000;
@@ -12,10 +15,14 @@
   align-items: center;
   padding: 14px 40px;
   transition: all 0.3s ease;
+  font-family: 'Rajdhani', sans-serif;
 }
 
 .logo {
-  height: 48px;
+  margin-top: 10px;
+ height: 150px; /* Increase logo height */
+  max-height: 200%; /* Prevent it from overflowing */
+  object-fit: contain;
 }
 
 .navbar-right {
@@ -25,8 +32,9 @@
 
 .navbar-right a {
   text-decoration: none;
-  color: #236466;
+  color: #1b4f4f; /* Dark teal */
   font-weight: 600;
+  font-size: 17px;
   position: relative;
   transition: color 0.3s ease;
 }
@@ -38,12 +46,12 @@
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: #236466;
+  background-color: #1b4f4f;
   transition: width 0.3s ease;
 }
 
 .navbar-right a:hover {
-  color: #0d3c3c;
+  color: #2f7e7e; /* Slightly brighter teal on hover */
 }
 
 .navbar-right a:hover::after {
@@ -53,7 +61,7 @@
 .menu-toggle {
   display: none;
   cursor: pointer;
-  color: #236466;
+  color: #1b4f4f;
 }
 
 /* Mobile styles */
@@ -88,4 +96,25 @@
     font-size: 16px;
     width: 100%;
   }
+}
+
+/* Topbar */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #1b4f4f; /* Dark teal */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2.5rem;
+  font-size: 14px;
+  z-index: 9999;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: 'Rajdhani', sans-serif;
 }

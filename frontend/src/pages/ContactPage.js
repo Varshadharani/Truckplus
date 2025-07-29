@@ -9,6 +9,7 @@ import { FaStar } from "react-icons/fa";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import emailjs from "@emailjs/browser";
 
 import LTenergy  from "../assets/logo/LTenergy.jpeg";
 import alfanar from "../assets/logo/alfanar.jpeg";
@@ -50,6 +51,7 @@ const testimonials = [
     support: "For customer support",
   },
 ];
+
 const ContactPage = () => {
     const [index, setIndex] = useState(0);
     
@@ -70,6 +72,41 @@ const ContactPage = () => {
         ...testimonials,
         ...testimonials, // ensure smooth loop
       ].slice(index, index + 4);
+ const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = {
+      name: form[0].value,
+      email: form[1].value,
+      phone: form[2].value,
+      address: form[3].value,
+      subject: form[4].value,
+      company: form[5].value,
+      companyEmail: form[6].value,
+      message: form[7].value,
+    };
+
+    try {
+      const res = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+      if (result.success) {
+        alert("✅ Thank you! Your message has been sent.");
+        form.reset();
+      } else {
+        alert("⚠️ Something went wrong. Please try again later.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("❌ Failed to send message.");
+    }
+  };
+
   return (
     <div className="contact-page">
     <section
@@ -91,7 +128,7 @@ const ContactPage = () => {
   <div className="form-overlay">
     <div className="form-left">
       <h2>Still Have Questions?</h2>
-      <form className="form-layout" onSubmit={(e) => e.preventDefault()}>
+      <form className="form-layout" onSubmit={handleSubmit}>
         <div className="form-row">
           <div className="form-group">
             <label>Name *</label>
@@ -218,7 +255,7 @@ const ContactPage = () => {
      <section className="contact-section">
   <div className="contact-card">
     <h2>Get in Touch</h2>
-    <form className="contact-form">
+    <form className="contact-form" onSubmit={handleSubmit}>
       <div className="form-group">
         <label>Name *</label>
         <input type="text" placeholder="Your Name" required />

@@ -302,7 +302,7 @@
 
 .service-card {
   background-color: #236466;
-  color: rgb(0, 0, 0);
+  color: rgb(245, 244, 244);
   flex: 1 1 300px; /* Responsive width: min 300px, growable */
   max-width: 380px;
   padding: 40px 30px;
