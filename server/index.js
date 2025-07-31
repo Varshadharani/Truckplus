@@ -4,7 +4,12 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
-app.use(cors());
+app.use(cors(
+  {
+  origin: "https://truckplus.vercel.app/", // ✅ Vercel live URL
+  methods: ["GET", "POST"],
+}
+));
 app.use(express.json());
 
 const transporter = nodemailer.createTransport({
