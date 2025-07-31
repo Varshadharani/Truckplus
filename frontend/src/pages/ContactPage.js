@@ -72,40 +72,41 @@ const ContactPage = () => {
         ...testimonials,
         ...testimonials, // ensure smooth loop
       ].slice(index, index + 4);
- const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    const form = e.target;
-    const data = {
-      name: form[0].value,
-      email: form[1].value,
-      phone: form[2].value,
-      address: form[3].value,
-      subject: form[4].value,
-      company: form[5].value,
-      companyEmail: form[6].value,
-      message: form[7].value,
-    };
-
-    try {
-      const res = await fetch("https://truckplus-1.onrender.com/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      const result = await res.json();
-      if (result.success) {
-        alert("✅ Thank you! Your message has been sent.");
-        form.reset();
-      } else {
-        alert("⚠️ Something went wrong. Please try again later.");
-      }
-    } catch (error) {
-      console.error(error);
-      alert("❌ Failed to send message.");
-    }
+  const form = e.target;
+  const data = {
+    name: form.name.value,
+    email: form.email.value,
+    phone: form.phone.value,
+    address: form.address.value,
+    subject: form.subject.value,
+    company: form.company.value,
+    companyEmail: form.companyEmail.value,
+    message: form.message.value,
   };
+
+  try {
+    const res = await fetch("https://truckplus-1.onrender.com/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    const result = await res.json();
+    if (result.success) {
+      alert("✅ Thank you! Your message has been sent.");
+      form.reset();
+    } else {
+      alert("⚠️ Something went wrong. Please try again later.");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("❌ Failed to send message.");
+  }
+};
+
 
   return (
     <div className="contact-page">
@@ -132,47 +133,47 @@ const ContactPage = () => {
         <div className="form-row">
           <div className="form-group">
             <label>Name *</label>
-            <input type="text" required />
+            <input type="text" name="name" required />
           </div>
           <div className="form-group">
             <label>Email *</label>
-            <input type="email" required />
+            <input type="email"name="email" required />
           </div>
         </div>
 
         <div className="form-row">
           <div className="form-group">
             <label>Phone *</label>
-            <input type="text" required />
+            <input type="text"  name="phone"  required />
           </div>
           <div className="form-group">
             <label>Address</label>
-            <input type="text" />
+            <input type="text" name="address"  />
           </div>
         </div>
 
         <div className="form-row">
           <div className="form-group">
             <label>Subject</label>
-            <input type="text" />
+            <input type="text" name="subject" />
           </div>
           <div className="form-group">
             <label>Company Name *</label>
-            <input type="text" required />
+            <input type="text" name="company" required />
           </div>
         </div>
 
         <div className="form-row">
           <div className="form-group full-width">
             <label>Company Email</label>
-            <input type="email" />
+            <input type="email"  name="companyEmail"/>
           </div>
         </div>
 
         <div className="form-row">
           <div className="form-group full-width">
             <label>Content *</label>
-            <textarea rows={4} required placeholder="Write your message here"></textarea>
+            <textarea name="message" rows={4} required placeholder="Write your message here"></textarea>
           </div>
         </div>
 
