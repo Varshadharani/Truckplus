@@ -21,6 +21,8 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post("/api/contact", async (req, res) => {
+    console.log("📥 Request received:", req.body); // ✅ add this to debug
+
   const { name, email, phone, address, subject, company, companyEmail, message } = req.body;
 
   const mailToOwner = {
