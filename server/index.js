@@ -6,9 +6,10 @@ require("dotenv").config();
 const app = express();
 app.use(cors(
   {
-  origin: ["https://truckplus.vercel.app/","http://localhost:3000"], // ✅ Vercel live URL
-  methods: ["GET", "POST"],
-}
+  origin: "https://truckplus.vercel.app", // ✅ Allow Vercel frontend
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type"]
+  }
 ));
 app.use(express.json());
 
