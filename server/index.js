@@ -6,7 +6,7 @@ require("dotenv").config();
 const app = express();
 app.use(cors(
   {
-  origin: "https://truckplus.vercel.app/", // ✅ Vercel live URL
+  origin: ["https://truckplus.vercel.app/","http://localhost:3000"], // ✅ Vercel live URL
   methods: ["GET", "POST"],
 }
 ));
@@ -18,6 +18,10 @@ const transporter = nodemailer.createTransport({
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
+});
+
+app.get("/", (req, res) => {
+  res.send("🚚 TruckPlus Backend is Running");
 });
 
 app.post("/api/contact", async (req, res) => {
