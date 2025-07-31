@@ -2,7 +2,7 @@
 
 .navbar {
   position: fixed;
-   height: 60px;
+  height: 60px;
   top: 32px;
   left: 0;
   right: 0;
@@ -20,7 +20,7 @@
 
 .logo {
   margin-top: 10px;
- height: 150px; /* Increase logo height */
+  height: 150px; /* Increase logo height */
   max-height: 200%; /* Prevent it from overflowing */
   object-fit: contain;
 }
@@ -73,6 +73,8 @@
 
   .menu-toggle {
     display: block;
+    font-size: 26px;
+    z-index: 1001;
   }
 
   .navbar-right {
@@ -96,6 +98,11 @@
     font-size: 16px;
     width: 100%;
   }
+
+  .logo {
+    height: 80px;          /* Smaller logo height for small screens */
+    margin-top: 5px;
+  }
 }
 
 /* Topbar */
@@ -117,4 +124,24 @@
   white-space: nowrap;
   overflow: hidden;
   font-family: 'Rajdhani', sans-serif;
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 16px;
+  }
+
+  .logo {
+    height: 60px;
+    margin-top: 0;
+  }
+
+  .menu-toggle {
+    font-size: 22px;
+  }
+
+  .navbar-right a {
+    font-size: 15px;
+  }
 }

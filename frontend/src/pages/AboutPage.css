@@ -368,6 +368,38 @@
 .slide img:hover {
   transform: scale(1.08);
 }
+@media (max-width: 1024px) {
+  .trusted-slider-title {
+    font-size: 1.75rem;
+  }
+
+  .slide img {
+    width: 140px;
+  }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  .trusted-slider-title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+
+  .slide img {
+    width: 120px;
+  }
+}
+
+/* Extra Small Devices (≤480px) */
+@media (max-width: 480px) {
+  .trusted-slider-title {
+    font-size: 1.3rem;
+  }
+
+  .slide img {
+    width: 100px;
+  }
+}
 .testimonial-section {
   padding: 60px 20px;
   background: rgba(255, 255, 255, 0.1);

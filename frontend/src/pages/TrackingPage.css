@@ -3,7 +3,7 @@
 }
 
 .tracking-hero {
-   height: 600px;
+   height: 600px !important;;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -51,7 +51,53 @@
   max-width: 800px;
   z-index: 2;
 }
+/* ✅ Responsive Media Queries */
 
+/* Tablets (≤1024px) */
+@media (max-width: 1024px) {
+  .tracking-hero {
+    height: 500px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  .tracking-hero {
+    height: 420px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-overlay p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Extra Small (≤480px) */
+@media (max-width: 480px) {
+  .tracking-hero {
+    height: 360px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 1.3rem;
+  }
+
+  .hero-overlay p {
+    font-size: 0.85rem;
+    padding: 0 12px;
+  }
+}
 
 .info-section {
   display: flex;

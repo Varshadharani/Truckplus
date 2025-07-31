@@ -19,10 +19,9 @@ import icon6 from "../assets/serviceicon2.png";
 import certifiedIcon from '../assets/certified.jpg';
 import airtruck from '../assets/air-truck-ship.webp';
 import shipocean from '../assets/ship-ocean.avif';
-import truck1 from '../assets/gallery/truck1.jpg';
+
 import trckfloat from '../assets/truckfloat.jpg';
-import faq1 from '../assets/ship3.jpg'; // Use actual path
-import faq2 from '../assets/ship.avif';
+
 
 
 const icons = [icon1, icon2, icon3, icon4, icon5, icon6];

@@ -305,61 +305,7 @@ const [index, setIndex] = useState(0);
       </div>
     </div>
 
-  <section className="contact-section">
-  <div className="contact-card" onSubmit={handleAboutContactSubmit}>
-    <h2>Get in Touch</h2>
-    <form className="contact-form">
-      <div className="form-group">
-        <label>Name *</label>
-        <input type="text" placeholder="Your Name" required />
-      </div>
-      <div className="form-group">
-        <label>Email *</label>
-        <input type="email" placeholder="Your Email" required/>
-      </div>
-      <div className="form-group">
-        <label>Address</label>
-        <input type="text" placeholder="Your Address" />
-      </div>
-      <div className="form-group">
-        <label>Phone *</label>
-        <input type="tel" placeholder="Your Phone" required/>
-      </div>
-      <div className="form-group">
-        <label>Subject</label>
-        <input type="text" placeholder="Subject" />
-      </div>
-      <div className="form-group">
-        <label>Company Name *</label>
-        <input type="text" placeholder="Company" required />
-      </div>
-      <div className="form-group">
-        <label>Company Email</label>
-        <input type="email" placeholder="Company Email" />
-      </div>
-      <div className="form-group full-width">
-        <label>Content *</label>
-        <textarea placeholder="Write your message here" rows="4" required/>
-      </div>
-      <div className="form-group checkbox full-width">
-        <label>
-          <input type="checkbox" required/>
-          I agree to the Terms and Privacy Policy
-        </label>
-      </div>
-      <div className="form-group full-width">
-        <button type="submit">Submit Now</button>
-      </div>
-      <div className="contact-details full-width">
-  <h4>Saudi Arabia</h4>
-  <p><strong>Email:</strong>  info@truckplus.sa</p>
-  <p><strong>TruckPlus Email:</strong> support@truckplus.com</p> {/* Replace with your actual */}
-  <p><strong>Phone:</strong> +966-123-456-789 </p>
-  
-</div>
-    </form>
-  </div>
-</section>
+
 
 
 

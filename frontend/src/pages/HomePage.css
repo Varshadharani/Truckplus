@@ -727,6 +727,35 @@
   color: #222;
   text-transform: uppercase;
 }
+@media (max-width: 1024px) {
+  .fleet-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fleet-heading {
+    font-size: 30px;
+  }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  .fleet-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .fleet-heading {
+    font-size: 26px;
+  }
+
+  .fleet-card {
+    padding: 16px;
+  }
+
+  .fleet-title {
+    font-size: 13px;
+  }
+}
 
 .equipment-section {
   padding: 60px 20px;
@@ -817,6 +846,47 @@
 .equipment-column:hover h3,
 .equipment-column:hover li {
   color: #fff;
+}
+@media (max-width: 1024px) {
+  .equipment-section {
+    padding: 40px 10px;
+  }
+
+  .equipment-column {
+    width: 240px;
+  }
+
+  .equipment-column h3 {
+    font-size: 18px;
+  }
+
+  .equipment-column li {
+    font-size: 14px;
+  }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  .equipment-section {
+    padding: 30px 10px;
+  }
+
+  .equipment-container {
+    gap: 15px;
+  }
+
+  .equipment-column {
+    width: 220px;
+    padding: 20px 16px;
+  }
+
+  .equipment-column h3 {
+    font-size: 16px;
+  }
+
+  .equipment-column li {
+    font-size: 13px;
+  }
 }
 
 

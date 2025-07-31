@@ -41,15 +41,24 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 15px rgba(35, 100, 102, 0.4);
   text-align: center;
+  width: 90%;
   max-width: 800px;
-  animation: floatIn 1.2s ease-out;
   color: #ffffff;
+  animation: floatIn 1.2s ease-out;
+
+  /* 🔥 Ensure long text wraps */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .creative-banner-content h1 {
   font-size: 2.4rem;
   margin-bottom: 15px;
   color: #ffffff;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .creative-banner-content p {
@@ -67,6 +76,73 @@
     transform: translateY(0);
   }
 }
+/* ✅ RESPONSIVE TWEAKS */
+@media (max-width: 768px) {
+  .creative-banner-content {
+    padding: 20px;
+  }
+
+  .creative-banner-content h1 {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+
+  .creative-banner-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .creative-banner-content h1 {
+    font-size: 1.3rem;
+    line-height: 1.2;
+  }
+
+  .creative-banner-content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .creative-banner {
+    height: 400px;
+    padding: 20px;
+  }
+
+  .creative-banner-content {
+    padding: 25px 30px;
+    max-width: 90%;
+  }
+
+  .creative-banner-content h1 {
+    font-size: 1.7rem;
+  }
+
+  .creative-banner-content p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .creative-banner {
+    height: 350px;
+    padding: 15px;
+  }
+
+  .creative-banner-content {
+    padding: 20px 20px;
+    max-width: 95%;
+  }
+
+  .creative-banner-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .creative-banner-content p {
+    font-size: 0.9rem;
+  }
+}
+
 .desert-form-container {
   background: url('../assets/desserttruck.png') no-repeat center center;
   background-size: 101% 100%; /* zoom 1% horizontally to crop 0.5% each side */
