@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff;
+  scroll-behavior: smooth;
+}
+
+/* Parallax Landing Style */
+.parallax-landing {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.parallax-landing .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 800px;
+}
+
+.parallax-landing h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.parallax-landing p {
+  font-size: 1.2rem;
+}
+
+.cta-btn {
+  padding: 12px 30px;
+  background-color: #f97316;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.services, .why-choose {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.services h2, .why-choose h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.services-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.services-list div {
+  max-width: 300px;
+}
+
+.why-choose ul {
+  list-style: none;
+  padding: 0;
+}
+
+.why-choose li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* Responsive Parallax Overlay */
+@media (max-width: 768px) {
+  .parallax-landing .overlay {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .parallax-landing h1 {
+    font-size: 1.8rem;
+  }
+
+  .parallax-landing p {
+    font-size: 1rem;
+  }
+
+  .cta-btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
+/* Responsive Services Section */
+@media (max-width: 768px) {
+  .services-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services-list div {
+    max-width: 90%;
+  }
+}
+
+/* Responsive Why Choose Section */
+@media (max-width: 768px) {
+  .why-choose ul {
+    padding-left: 0;
+  }
+
+  .why-choose li {
+    font-size: 1rem;
+  }
+}
+
+/* General small screen tweaks */
+@media (max-width: 480px) {
+  .parallax-landing h1 {
+    font-size: 1.5rem;
+  }
+
+  .parallax-landing p {
+    font-size: 0.95rem;
+  }
+
+  .cta-btn {
+    font-size: 0.85rem;
+    padding: 8px 18px;
+  }
+
+  .services h2,
+  .why-choose h2 {
+    font-size: 1.5rem;
+  }
+}
+
